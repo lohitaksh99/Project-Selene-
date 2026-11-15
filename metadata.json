@@ -1,0 +1,8 @@
+{
+  "name": "Remix redesign , final drafts  folder version ",
+  "description": "Decision-support astrodynamics, 3D GIS visualization, and mission trade-study platform for NASA\u0027s Lunar South Pole Landing Site and Mission Planning Challenge.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

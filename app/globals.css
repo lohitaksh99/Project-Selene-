@@ -1,0 +1,202 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root,
+.selene-workspace-shell.light-editorial {
+  --selene-bg: #F7F7F3;
+  --selene-surface: #FFFFFF;
+  --selene-surface-alt: #EEEDE8;
+  --selene-surface-elevated: #F3F2ED;
+  --selene-border: #D4D3CC;
+  --selene-border-strong: #151515;
+  --selene-text: #141413;
+  --selene-text-secondary: #3A3A36;
+  --selene-text-muted: #5C5C56;
+  --selene-accent-yellow: #E6EA22;
+  --selene-accent-primary: #111111;
+  --selene-accent-solar: #B84216;
+  --selene-accent-earth: #006B82;
+  --selene-accent-green: #186E3C;
+  --selene-accent-amber: #9A4B07;
+  --selene-accent-red: #B91C1C;
+  --selene-accent-gold: #8A6D14;
+  --selene-chart-bg: #FAF9F6;
+  --selene-chart-grid: rgba(20, 20, 19, 0.10);
+  --selene-chart-tick: #4A4A44;
+  --selene-chart-tooltip-bg: #FFFFFF;
+  --selene-chart-tooltip-border: #C4C3BC;
+}
+
+.dark,
+.selene-workspace-shell.dark {
+  --selene-bg: #080B12;
+  --selene-surface: #111318;
+  --selene-surface-alt: #171A21;
+  --selene-surface-elevated: #1D212A;
+  --selene-border: #2B303B;
+  --selene-border-strong: #F3EEE3;
+  --selene-text: #F3EEE3;
+  --selene-text-secondary: #C8C4BA;
+  --selene-text-muted: #9BA1AE;
+  --selene-accent-yellow: #F1F52E;
+  --selene-accent-primary: #F1F52E;
+  --selene-accent-solar: #D9541E;
+  --selene-accent-earth: #00E5FF;
+  --selene-accent-green: #22C55E;
+  --selene-accent-amber: #F59E0B;
+  --selene-accent-red: #EF4444;
+  --selene-accent-gold: #D6C36A;
+  --selene-chart-bg: #0E1117;
+  --selene-chart-grid: rgba(233, 230, 222, 0.08);
+  --selene-chart-tick: #9BA1AE;
+  --selene-chart-tooltip-bg: #111318;
+  --selene-chart-tooltip-border: #2B303B;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #F7F7F3;
+    color: #141413;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    letter-spacing: -0.025em;
+    font-weight: 800;
+  }
+
+  .font-mono {
+    font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--selene-accent-earth);
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Unified Workspace Theme Adaptation Layer */
+.selene-workspace-shell {
+  background-color: var(--selene-bg);
+  color: var(--selene-text);
+}
+
+.selene-workspace-shell.light-editorial .bg-\[\#080B12\],
+.selene-workspace-shell.light-editorial .bg-\[\#0A0C0F\],
+.selene-workspace-shell.light-editorial .bg-\[\#0D1014\] {
+  background-color: var(--selene-bg) !important;
+}
+
+.selene-workspace-shell.light-editorial .bg-\[\#111111\],
+.selene-workspace-shell.light-editorial .bg-\[\#101214\],
+.selene-workspace-shell.light-editorial .bg-\[\#14171A\],
+.selene-workspace-shell.light-editorial .bg-\[\#16181B\],
+.selene-workspace-shell.light-editorial .bg-\[\#101214\]\/95 {
+  background-color: var(--selene-surface) !important;
+}
+
+.selene-workspace-shell.light-editorial .bg-\[\#181818\],
+.selene-workspace-shell.light-editorial .bg-\[\#1A1E24\],
+.selene-workspace-shell.light-editorial .bg-\[\#202428\],
+.selene-workspace-shell.light-editorial .bg-\[\#14171A\]\/90,
+.selene-workspace-shell.light-editorial .bg-\[\#1A1E24\]\/80 {
+  background-color: var(--selene-surface-alt) !important;
+}
+
+.selene-workspace-shell.light-editorial .border-\[\#2D2D2D\],
+.selene-workspace-shell.light-editorial .border-\[\#202428\],
+.selene-workspace-shell.light-editorial .border-\[\#E9E6DE\]\/15,
+.selene-workspace-shell.light-editorial .border-\[\#E9E6DE\]\/10,
+.selene-workspace-shell.light-editorial .border-\[\#E9E6DE\]\/20 {
+  border-color: var(--selene-border) !important;
+}
+
+.selene-workspace-shell.light-editorial .divide-\[\#2D2D2D\] > :not([hidden]) ~ :not([hidden]) {
+  border-color: var(--selene-border) !important;
+}
+
+.selene-workspace-shell.light-editorial .text-\[\#F3EEE3\],
+.selene-workspace-shell.light-editorial .text-\[\#E9E6DE\] {
+  color: var(--selene-text) !important;
+}
+
+.selene-workspace-shell.light-editorial .text-\[\#F3EEE3\]\/90,
+.selene-workspace-shell.light-editorial .text-\[\#F3EEE3\]\/85,
+.selene-workspace-shell.light-editorial .text-\[\#F3EEE3\]\/80,
+.selene-workspace-shell.light-editorial .text-\[\#F3EEE3\]\/75 {
+  color: var(--selene-text-secondary) !important;
+}
+
+.selene-workspace-shell.light-editorial .text-\[\#F3EEE3\]\/70,
+.selene-workspace-shell.light-editorial .text-\[\#F3EEE3\]\/65,
+.selene-workspace-shell.light-editorial .text-\[\#F3EEE3\]\/60,
+.selene-workspace-shell.light-editorial .text-\[\#F3EEE3\]\/55,
+.selene-workspace-shell.light-editorial .text-\[\#F3EEE3\]\/50,
+.selene-workspace-shell.light-editorial .text-\[\#F3EEE3\]\/45,
+.selene-workspace-shell.light-editorial .text-\[\#F3EEE3\]\/40,
+.selene-workspace-shell.light-editorial .text-\[\#B8B2A5\] {
+  color: var(--selene-text-muted) !important;
+}
+
+.selene-workspace-shell.light-editorial .text-\[\#00E5FF\],
+.selene-workspace-shell.light-editorial .text-\[\#38BDF8\] {
+  color: var(--selene-accent-earth) !important;
+}
+
+.selene-workspace-shell.light-editorial .text-\[\#D9541E\] {
+  color: var(--selene-accent-solar) !important;
+}
+
+.selene-workspace-shell.light-editorial .text-\[\#22C55E\],
+.selene-workspace-shell.light-editorial .text-\[\#10B981\] {
+  color: var(--selene-accent-green) !important;
+}
+
+.selene-workspace-shell.light-editorial .text-\[\#F59E0B\],
+.selene-workspace-shell.light-editorial .text-\[\#F4C542\],
+.selene-workspace-shell.light-editorial .text-\[\#D6C36A\] {
+  color: var(--selene-accent-gold) !important;
+}
+
+/* Preserve dark deep-space background exclusively inside 3D WebGL / 2D Polar Canvas stages */
+.selene-workspace-shell .selene-3d-canvas-stage,
+.selene-workspace-shell.light-editorial .selene-3d-canvas-stage {
+  background-color: #080B12 !important;
+  color: #F3EEE3 !important;
+}
+
+.selene-workspace-shell.light-editorial .selene-3d-canvas-stage .text-\[\#F3EEE3\],
+.selene-workspace-shell.light-editorial .selene-3d-canvas-stage .text-\[\#E9E6DE\] {
+  color: #F3EEE3 !important;
+}
+
+.selene-workspace-shell.light-editorial .selene-3d-canvas-stage .text-\[\#00E5FF\],
+.selene-workspace-shell.light-editorial .selene-3d-canvas-stage .text-\[\#38BDF8\] {
+  color: #38BDF8 !important;
+}
+
+.selene-workspace-shell.light-editorial .selene-3d-canvas-stage .text-\[\#B8B2A5\] {
+  color: #C8C4BA !important;
+}
